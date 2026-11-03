@@ -330,6 +330,9 @@ def jugar(prueba=False):
         -str: "Jugador" o "Rival".
     """
 
+    Demo = False
+
+
     print("********** TABLEROS BARCOS **********")
     print("\n---------- TABLERO BARCOS JUGADOR --------")
     tablero_barcos_jugador = crear_tableros()
@@ -344,17 +347,26 @@ def jugar(prueba=False):
     tablero_disparos_rival = crear_tableros()
     print(tablero_disparos_rival)
 
-
+    if Demo == True:
     # barcos a mano para la prueba
-    print("\n ********** AÑADIENDO LOS BARCOS AL TABLERO **********")
+        print("\n ********** AÑADIENDO LOS BARCOS AL TABLERO **********")
 
-    tablero_barcos_rival[(0, 0)] = "O"
-    print("\n---------- TABLERO BARCOS RIVAL ----------")
-    print(tablero_barcos_rival)
-    print("\n")
-    print("\n---------- TABLERO BARCOS JUGADOR --------")
-    tablero_barcos_jugador[(9, 9)] = "O"
-    print(tablero_barcos_jugador)
+        tablero_barcos_rival[(0, 0)] = "O"
+        print("\n---------- TABLERO BARCOS RIVAL ----------")
+        print(tablero_barcos_rival)
+        print("\n")
+        print("\n---------- TABLERO BARCOS JUGADOR --------")
+        tablero_barcos_jugador[(9, 9)] = "O"
+        print(tablero_barcos_jugador)
+
+    else:
+        colocar_barcos(tablero_barcos_rival)
+        print("\n---------- TABLERO BARCOS RIVAL ----------")
+        print(tablero_barcos_rival)
+        colocar_barcos(tablero_barcos_jugador)
+        print("\n---------- TABLERO BARCOS JUGADOR --------")
+        print(tablero_barcos_jugador)
+    
 
     
     print("\n")
